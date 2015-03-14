@@ -1,2 +1,5 @@
-# angular-highlight-filter
-AngularJS Text Highlight Filter
+# AngularJS Text Highlight Filter
+
+An AngularJS filter for highlighting and editing text parts on the view side with a regex.
+I used this filter for linking twitter hashtags on a project of mine.
+
