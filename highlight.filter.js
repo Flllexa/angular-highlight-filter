@@ -2,7 +2,6 @@
 * 	Angular hashtags highlighter
 *
 * 	Author: Sanjeya Cooray
-*	Web Hosting: http://www.misadev.com
 * 
 * 	License: GPL v2 - The project is as is.
 * 
