@@ -1,0 +1,94 @@
+<html ng-app="app"> 
+
+<head>
+    <meta charset="UTF-8">
+    <title>Filter sample template </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 50px;            
+        }        
+    </style>    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>        
+                
+    <!-- quick and dirty angular app setup for testing the filter-->        
+    <script>    
+        var app = angular.module('app', []);    
+        app.controller( 'main' , function($scope){
+           $scope.textString = 
+                "de omnis iste natus error sit #voluptatem #accusantium #doloremque laudantium." ;
+        });
+    </script>
+    
+    <!-- include the filter -->
+    <script src="highlight.filter.js"></script> 
+    
+</head>
+
+<body>
+    <div class="container">
+    <div class="col-md-8 col-md-offset-2" ng-controller="main">        
+        <div>        
+            <h1>AngularJS Highlight Filter</h1>   
+            <p>
+                An AngularJS filter for <b>highlighting</b> and editing text parts on the view side with a regex. <br />
+                I used this filter for linking twitter hashtags on a project of mine.
+            </p>
+            <a href="github">Download source</a>
+        </div>
+        <hr />
+        <h2> Example </h2>
+        <div>
+            <p>
+                <h3>Original text</h3>
+                <blockquote>
+                    <span ng-bind="textString"></span></p>
+                </blockquote>
+            <p>
+                <h3>Filtered text / Result</h3>
+                <blockquote>
+                    <span ng-bind-html="textString | highlight"> need to be updated</span>
+                </blockquote>
+            </p>
+        </div>
+        <hr />
+        <div>            
+            <h2>Usage</h2>
+            <ol>
+                <li>Include "highlight.filter.js" in the html head</li>
+                <li>Edit the highlight filter app name based on your angular module app name 
+                    (default name is set to 'app')</li>
+                <li>Use the filter in a ng-bind-html if you want to highlight text with anchors</li>
+            </ol>
+            
+
+<pre style='color:#000000;background:#f1f0f0; text-align:left'>
+<pre>
+<span style='color:#a65700; '>&lt;</span><span style='color:#400000; font-weight:bold; '>html</span><span style='color:#074726; '> ng-app</span><span style='color:#806030; '>=</span><span style='color:#e60000; '>"app"</span><span style='color:#a65700; '>></span> 
+<span style='color:#a65700; '>&lt;</span><span style='color:#400000; font-weight:bold; '>head</span><span style='color:#a65700; '>></span>
+    ...template, angular stuff, etc<span style='color:#8c0000; '>...</span>
+
+    <span style='color:#c34e00; '>&lt;!-- include the filter --></span>
+    <span style='color:#a65700; '>&lt;</span><span style='color:#400000; font-weight:bold; '>script src="highlight.filter.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#400000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span> 
+
+    ....
+<span style='color:#a65700; '>&lt;/</span><span style='color:#400000; font-weight:bold; '>head</span><span style='color:#a65700; '>></span>
+<span style='color:#a65700; '>&lt;</span><span style='color:#400000; font-weight:bold; '>body</span><span style='color:#a65700; '>></span>
+    <span style='color:#a65700; '>&lt;</span><span style='color:#400000; font-weight:bold; '>div</span><span style='color:#074726; '> ng-controller</span><span style='color:#806030; '>=</span><span style='color:#e60000; '>"main"</span><span style='color:#a65700; '>></span>
+        ...
+        <span style='color:#a65700; '>&lt;</span><span style='color:#400000; font-weight:bold; '>span</span><span style='color:#074726; '> ng-bind-html</span><span style='color:#806030; '>=</span><span style='color:#e60000; '>"text | highlight"</span><span style='color:#a65700; '>></span> content<span style='color:#a65700; '>&lt;/</span><span style='color:#400000; font-weight:bold; '>span</span><span style='color:#a65700; '>></span>
+        ...        
+    <span style='color:#a65700; '>&lt;/</span><span style='color:#400000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span>
+<span style='color:#a65700; '>&lt;/</span><span style='color:#400000; font-weight:bold; '>body</span><span style='color:#a65700; '>></span>
+
+<span style='color:#a65700; '>&lt;/</span><span style='color:#400000; font-weight:bold; '>html</span><span style='color:#a65700; '>></span>
+</pre>
+</pre>
+            
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
